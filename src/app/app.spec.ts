@@ -1,15 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
 import { Collection } from '../collection';
-import { Color } from '../enums/Color';
+import { Color } from '../enums/color';
 
 describe('App', () => {
   beforeEach(async () => {
     localStorage.clear();
     await TestBed.configureTestingModule({
       imports: [App],
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   it('should create the app', () => {
