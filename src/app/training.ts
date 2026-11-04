@@ -42,9 +42,7 @@ export const users: User[] = [
   { id: 1, name: 'Алексей', email: 'alex@example.com', age: 25 },
   { id: 2, name: 'Мария', email: 'maria@example.com' },
   { id: 3, name: 'Иван', email: 'ivan@example.com', age: 17 },
-  { id: 4, name: 'Елена', email: 'elena@example.com', age: 30 },
+  { id: 4, name: 'Елена', email: 'elena@example.com', age: 27 },
 ];
 
-export const adultUsers: User[] = users.filter(
-  (user) => user.age !== undefined && user.age >= 18
-);
+export const adultUsers: User[] = users.filter((user) => user.age !== undefined && user.age >= 18);
