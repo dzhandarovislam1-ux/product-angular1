@@ -1,0 +1,259 @@
+:host {
+  display: block;
+}
+
+.site-header {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  min-height: 88px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 7vw, 112px);
+  color: #fff;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 38px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.4vw, 38px);
+}
+
+.main-nav a,
+.header-contact {
+  color: inherit;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.main-nav a {
+  opacity: 0.82;
+  transition: opacity 160ms ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  opacity: 1;
+}
+
+.header-contact {
+  border: 1px solid rgb(255 255 255 / 75%);
+  border-radius: 2px;
+  padding: 12px 19px;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.header-contact:hover {
+  background: #fff;
+  color: #123b35;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: min(760px, 100svh);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 130px 24px 80px;
+  background-color: #263d3d;
+  background-image:
+    linear-gradient(90deg, rgb(9 28 30 / 52%), rgb(9 28 30 / 28%)),
+    linear-gradient(0deg, rgb(8 28 29 / 45%), transparent 55%),
+    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=85');
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content {
+  width: min(100%, 1120px);
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(30px, 4.5vw, 58px);
+  font-weight: 500;
+  letter-spacing: 0.045em;
+  line-height: 1.2;
+}
+
+.hero-description {
+  margin: 18px 0 40px;
+  color: rgb(255 255 255 / 86%);
+  font-size: 15px;
+}
+
+.tour-search {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.1fr auto;
+  align-items: stretch;
+  gap: 0;
+  margin: 0 auto;
+  padding: 8px;
+  background: rgb(255 255 255 / 94%);
+  color: #243b39;
+  text-align: left;
+}
+
+.search-field {
+  display: grid;
+  align-content: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 10px 20px;
+}
+
+.search-field + .search-field {
+  border-left: 1px solid #dfe5e2;
+}
+
+.search-field span {
+  color: #71807a;
+  font-size: 11px;
+}
+
+.search-field select,
+.search-field input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #243b39;
+  font: inherit;
+  font-size: 13px;
+}
+
+.search-button {
+  min-width: 145px;
+  border: 0;
+  border-radius: 2px;
+  padding: 0 24px;
+  background: #174b41;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  transition: background-color 160ms ease;
+}
+
+.search-button:hover {
+  background: #10392f;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  display: grid;
+  width: 25px;
+  height: 40px;
+  place-items: start center;
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 14px;
+  padding-top: 8px;
+  transform: translateX(-50%);
+}
+
+.scroll-hint span {
+  width: 3px;
+  height: 7px;
+  border-radius: 3px;
+  background: #fff;
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    min-height: 72px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .tour-search {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .search-field {
+    padding: 12px;
+  }
+
+  .search-field + .search-field {
+    border-left: 0;
+  }
+
+  .search-button {
+    min-height: 48px;
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding-inline: 20px;
+  }
+
+  .brand {
+    font-size: 15px;
+  }
+
+  .brand-mark {
+    width: 32px;
+  }
+
+  .header-contact {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 740px;
+    padding-inline: 18px;
+  }
+
+  h1 br {
+    display: none;
+  }
+
+  .tour-search {
+    grid-template-columns: 1fr;
+  }
+
+  .search-button {
+    grid-column: auto;
+  }
+}
