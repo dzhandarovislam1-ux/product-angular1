@@ -9,9 +9,10 @@
   left: 0;
   display: flex;
   width: 100%;
-  min-height: 88px;
+  min-height: 104px;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   padding: 0 clamp(24px, 7vw, 112px);
   color: #fff;
 }
@@ -65,7 +66,9 @@
   border: 1px solid rgb(255 255 255 / 75%);
   border-radius: 2px;
   padding: 12px 19px;
-  transition: background-color 160ms ease, color 160ms ease;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
 }
 
 .header-contact:hover {
@@ -105,10 +108,11 @@
 
 h1 {
   margin: 0;
-  font-size: clamp(30px, 4.5vw, 58px);
+  font-size: clamp(28px, 3.6vw, 48px);
   font-weight: 500;
   letter-spacing: 0.045em;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .hero-description {
@@ -146,6 +150,11 @@ h1 {
   font-size: 11px;
 }
 
+.search-field small {
+  color: #71807a;
+  font-size: 10px;
+}
+
 .search-field select,
 .search-field input {
   width: 100%;
@@ -169,8 +178,14 @@ h1 {
   transition: background-color 160ms ease;
 }
 
-.search-button:hover {
+.search-button:hover:not(:disabled) {
   background: #10392f;
+}
+
+.search-button:disabled {
+  background: #9aa8a3;
+  cursor: not-allowed;
+  opacity: 0.72;
 }
 
 .scroll-hint {
@@ -196,7 +211,10 @@ h1 {
 
 @media (max-width: 800px) {
   .site-header {
-    min-height: 72px;
+    min-height: 140px;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-block: 12px;
   }
 
   .main-nav {
@@ -241,7 +259,8 @@ h1 {
   }
 
   .hero {
-    min-height: 740px;
+    min-height: 800px;
+    padding-top: 170px;
     padding-inline: 18px;
   }
 
